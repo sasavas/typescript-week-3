@@ -1,11 +1,10 @@
 import useTodoForm from "../hooks/useTodoForm";
+import Button from "../shared/components/Button";
+import { useTodos } from "../states/TodoContext";
 
-interface TodoFormProps {
-    addTodo: (title: string, content: string) => void;
-}
 
-const TodoForm = (props: TodoFormProps) => {
-    const { addTodo } = props;
+const TodoForm = () => {
+    const { addTodo } = useTodos();
 
     const {
         title, setTitle, content, setContent, resetForm
@@ -14,7 +13,7 @@ const TodoForm = (props: TodoFormProps) => {
     const handleAddTodo = () => {
         addTodo(title, content);
         resetForm();
-    }
+    };
 
     return (
         <div className="todo-item-new">
@@ -35,8 +34,7 @@ const TodoForm = (props: TodoFormProps) => {
                                 type="text" placeholder="Enter content" />
                         </div>
                     </div>
-                    <button id="add-todo-btn" onClick={handleAddTodo}
-                    >Add</button>
+                    <Button title="Add" onClickHandler={handleAddTodo} />
                 </div>
             </div>
         </div>

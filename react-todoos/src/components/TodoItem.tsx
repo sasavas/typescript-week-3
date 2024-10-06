@@ -1,16 +1,17 @@
 import { Todo } from "../types";
+import { useTodos } from "../states/TodoContext";
 
 interface TodoItemProps {
     todo: Todo;
-    toggleTodoDone: (id: number) => void;
-    deleteTodo: (id: number) => void;
 }
 
-const TodoItem: React.FC<TodoItemProps> = ({ todo, toggleTodoDone, deleteTodo }) => {
+const TodoItem: React.FC<TodoItemProps> = ({ todo }) => {
+    const { toggleTodo, deleteTodo } = useTodos();
+
     return (
         <li key={todo.id} className="todo-item card">
             <div className="container">
-                <div className="checkbox" onClick={() => toggleTodoDone(todo.id)}>
+                <div className="checkbox" onClick={() => toggleTodo(todo.id)}>
                     <div className="outer">
                         {
                             todo.done && <div className="inner-filled"></div>

@@ -1,0 +1,11 @@
+.addTodoBtn {
+    border: 1px solid gray;
+    border-radius: 0.2rem;
+    background-color: #f0f8ff;
+    padding: 0.8rem 2.4rem;
+}
+
+.addTodoBtn:hover {
+    cursor: pointer;
+    background-color: #e0e8ee;
+}
