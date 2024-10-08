@@ -3,13 +3,34 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import Home from './components/Home';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <Router>
+      <nav>
+        <ul>
+          <li>
+            <Link to="/">
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link to="/todos">
+              Todos
+            </Link>
+          </li>
+        </ul>
+      </nav>
+      <Routes>
+        <Route path='/' Component={Home} />
+        <Route path='/todos' Component={App} />
+      </Routes>
+    </Router>
   </React.StrictMode>
 );
 
