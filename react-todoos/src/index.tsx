@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Home from './components/Home';
+import Navbar from './components/Navbar';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -12,20 +13,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <Router>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link to="/todos">
-              Todos
-            </Link>
-          </li>
-        </ul>
-      </nav>
+      <Navbar />
       <Routes>
         <Route path='/' Component={Home} />
         <Route path='/todos' Component={App} />

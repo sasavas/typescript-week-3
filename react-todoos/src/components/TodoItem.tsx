@@ -11,10 +11,10 @@ const TodoItem: React.FC<TodoItemProps> = ({ todo }) => {
     return (
         <li key={todo.id} className="todo-item card">
             <div className="container">
-                <div className="checkbox" onClick={() => toggleTodo(todo.id)}>
+                <div className="checkbox" data-testid="checkbox" onClick={() => toggleTodo(todo.id)}>
                     <div className="outer">
                         {
-                            todo.done && <div className="inner-filled"></div>
+                            todo.done && <div className="inner-filled" data-testid="inner-filled"></div>
                         }
                     </div>
                 </div>

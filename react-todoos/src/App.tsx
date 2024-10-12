@@ -7,7 +7,7 @@ function App() {
   return (
     <TodoProvider>
       <main className="container">
-        <h1 className={styles.title}>Todoos</h1>
+        {/* <h1 className={styles.title}>Todoos</h1> */}
 
         <TodoList />
         <TodoForm />
