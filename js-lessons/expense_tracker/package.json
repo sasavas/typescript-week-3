@@ -1,0 +1,13 @@
+{
+  "name": "assignment_1_week",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "expense_tracker_client.js",
+  "scripts": {
+    "start": "node expense_tracker_client.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
